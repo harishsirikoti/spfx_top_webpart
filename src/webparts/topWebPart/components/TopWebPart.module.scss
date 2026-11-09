@@ -1,0 +1,73 @@
+// Colors are taken from the reference screenshot (not theme-driven on purpose).
+$bannerBackground: #fff9ed;
+$iconBackground: #e8730c;
+$titleColor: #1b3a8c;
+$descriptionColor: #6b6b6b;
+
+.banner {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  min-height: 64px;
+  padding: 12px 16px;
+  background-color: $bannerBackground;
+  // Prefer the SharePoint theme font; fall back to a clean sans-serif.
+  font-family: inherit;
+}
+
+.iconBox {
+  flex: 0 0 auto; // never shrink or stretch the icon box
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: $iconBackground;
+}
+
+.icon {
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.content {
+  flex: 1 1 auto;
+  min-width: 0; // allows long text to wrap inside narrow sections
+}
+
+.title {
+  color: $titleColor;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.description {
+  margin-top: 2px;
+  color: $descriptionColor;
+  font-size: 15px;
+  line-height: 22px;
+  overflow-wrap: anywhere;
+}
+
+// Slightly tighter on phones.
+@media (max-width: 480px) {
+  .banner {
+    gap: 12px;
+    padding: 10px 12px;
+  }
+
+  .title {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "top-webpart-client-side-solution",
+    "id": "6d99acfc-d5a8-4180-b3c4-34e775344a50",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.24.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "top-webpart description"
+      },
+      "longDescription": {
+        "default": "top-webpart description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "top-webpart Feature",
+        "description": "The feature that activates elements of the top-webpart solution.",
+        "id": "65a86d3a-decd-4752-b8e5-884242ee645a",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/top-webpart.sppkg"
+  }
+}
