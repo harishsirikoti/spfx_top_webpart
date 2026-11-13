@@ -1,0 +1,234 @@
+// Colors are taken from the reference screenshot (not theme-driven on purpose).
+$textDark: #1a1a1a;
+$textMuted: #8a8f98;
+$borderLight: #e3e6ec;
+$cardBackground: #ffffff;
+$navy: #1b2a8c;
+$descriptionBlue: #1b3a8c;
+$checkGreen: #22a45d;
+$avatarBackground: #e6eefc;
+$avatarText: #2b5fb4;
+
+.meetTheTeam {
+  box-sizing: border-box;
+  width: 100%;
+  font-family: inherit;
+  color: $textDark;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+}
+
+.mainTitle {
+  margin: 0 0 20px;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: $textDark;
+}
+
+// ---- Leadership row: profile card (left) + responsibilities (right) ----
+.leadership {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(0, 2fr); // card is about one third, like the screenshot
+  gap: 28px;
+  align-items: start;
+}
+
+// Applied from JavaScript when the web part itself is narrow.
+.stacked {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.featuredCard {
+  padding: 20px 22px 22px;
+  background: $cardBackground;
+  border: 1px solid $borderLight;
+  border-radius: 12px;
+}
+
+.featuredTitle {
+  margin: 0 0 16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgb(63, 53, 202);
+}
+
+.featuredPersona {
+  :global(.ms-Persona-primaryText) {
+    font-size: 20px;
+    font-weight: 600;
+    color: $textDark;
+  }
+
+  // Job title sits directly under the name; the text column may shrink instead of overflowing.
+  :global(.ms-Persona-details) {
+    min-width: 0;
+    justify-content: center;
+  }
+
+  :global(.ms-Persona-secondaryText) {
+    display: block;
+    font-size: 13px;
+    color: $textMuted;
+  }
+}
+
+.buttonRow {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+// Doubled class names make these rules win over Fluent's built-in button styles.
+.emailButton.emailButton,
+.teamDlButton.teamDlButton {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 40px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.emailButton.emailButton {
+  background: $navy;
+  border-color: $navy;
+  color: #ffffff;
+
+  &:hover,
+  &:focus {
+    background: darken($navy, 6%);
+    border-color: darken($navy, 6%);
+    color: #ffffff;
+  }
+}
+
+.teamDlButton.teamDlButton {
+  background: $cardBackground;
+  border: 1px solid #b9c0d0;
+  color: $textDark;
+
+  &:hover,
+  &:focus {
+    background: #f3f5f9;
+    color: $textDark;
+  }
+}
+
+// ---- Responsibilities ----
+.responsibilities {
+  min-width: 0;
+}
+
+.descriptionBox {
+  margin: 0 0 18px;
+  padding: 18px 22px;
+  border: 1px solid $borderLight;
+  border-radius: 12px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $descriptionBlue;
+  background: #f3f5f9;
+}
+
+.responsibilityList {
+  margin: 0;
+  padding: 0 0 0 4px;
+  list-style: none;
+}
+
+.responsibilityItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 0 0 14px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: $textDark;
+}
+
+.checkCircle {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-top: 0;
+  border-radius: 50%;
+  background: $checkGreen;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+// ---- Dedicated Specialists ----
+.specialists {
+  margin-top: 32px;
+}
+
+.specialistsTitle {
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 700;
+  color: $textDark;
+}
+
+// auto-fill keeps cards about the same width: five fit in a row on a wide web part
+// and the grid wraps on narrow ones. This reacts to the web part width, not the window.
+.specialistGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.specialistCard {
+  min-width: 0;
+  padding: 18px 16px;
+  background: $cardBackground;
+  border: 1px solid $borderLight;
+  border-radius: 12px;
+}
+
+.specialistPersona {
+  :global(.ms-Persona-primaryText) {
+    font-size: 16px;
+    font-weight: 600;
+    color: $textDark;
+  }
+
+  :global(.ms-Persona-secondaryText) {
+    font-size: 13px;
+    color: $textMuted;
+  }
+
+  // Light blue circle with blue initials, as in the screenshot.
+  :global(.ms-Persona-initials) {
+    background: $avatarBackground;
+    color: $avatarText;
+  }
+
+  :global(.ms-Persona-coin),
+  :global(.ms-Persona-imageArea) {
+    flex: 0 0 auto;
+  }
+}
+
+.hint {
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+  color: $textMuted;
+}
+
+.spinner {
+  justify-content: flex-start;
+  margin-top: 12px;
+}

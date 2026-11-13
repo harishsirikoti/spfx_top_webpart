@@ -1,8 +1,21 @@
 const spfxProfile = require('@microsoft/eslint-config-spfx/lib/flat-profiles/react');
 
 module.exports = [
-  // Never lint generated build output (packaged bundles contain third-party code)
-  { ignores: ['sharepoint/**', 'dist/**', 'lib/**', 'temp/**', 'release/**'] },
+  // Generated output is not source code, so it must never be linted.
+  {
+    ignores: [
+      'sharepoint/**',
+      'dist/**',
+      'lib/**',
+      'lib-commonjs/**',
+      'lib-dts/**',
+      'lib-esm/**',
+      'release/**',
+      'temp/**',
+      'jest-output/**',
+      'teams/**'
+    ]
+  },
   ...spfxProfile,
   {
     files: ['**/*.ts', '**/*.tsx'],

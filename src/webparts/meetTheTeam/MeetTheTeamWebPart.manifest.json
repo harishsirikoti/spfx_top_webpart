@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "c2301232-f773-4c44-b945-ce55640bf679",
+  "alias": "MeetTheTeamWebPart",
+  "componentType": "WebPart",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+  "supportedHosts": ["SharePointWebPart", "TeamsPersonalApp", "TeamsTab", "SharePointFullPage"],
+  "supportsThemeVariants": true,
+
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Advanced
+    "group": { "default": "Advanced" },
+    "title": { "default": "Meet the Team" },
+    "description": { "default": "Featured team leader, responsibilities and dedicated specialists" },
+    "officeFabricIconFontName": "Group",
+    "properties": {
+      "title": "Meet the team",
+      "specialistsTitle": "Dedicated Specialists",
+      "featuredSectionTitle": "Data Operations & Management",
+      "featuredEmployee": [],
+      "teamDlUrl": "",
+      "description": "Owns AI governance frameworks, model risk mitigation, and fair, transparent AI deployment across enterprise applications.",
+      "responsibilities": [
+        { "id": "default-1", "text": "Enterprise AI Fairness, Auditability, and Governance Rules in Responsible AI Operations." },
+        { "id": "default-2", "text": "Cross-business unit bias detection, explainability standards, and algorithmic risk mitigation." },
+        { "id": "default-3", "text": "Downstream model monitoring, policy compliance, and ethical safety guardrails across AI/ML pipelines and analytical feeds." }
+      ],
+      "specialists": []
+    }
+  }]
+}
